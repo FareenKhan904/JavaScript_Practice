@@ -124,3 +124,57 @@ function completeTodo(index) {
  allTodos =newallTodos
   render();
 }
+
+
+
+// https://rickandmortyapi.com/api/character ------------- link of rick & morty api
+
+
+// create  an array, where data will store here
+let data = [];
+
+// get button from html file
+const fetchButton = document.querySelector('button');
+
+// add event by clicking button then call fetchDataFromServer function
+fetchButton.addEventListener('click',fetchDataFromServer)
+
+// get main div from html file
+const main = document.querySelector('.main');
+
+// fetchDataFromServer function 
+// async is used because we are using await & without async , await render error
+async function fetchDataFromServer(){
+
+    // await is used because of server takes time to fetch data to client .
+    // fetch is used to fetch data to server.
+    let response = await fetch("https://rickandmortyapi.com/api/character")
+
+    // json is used to fetch data in javascript formet
+    data = await response.json();
+    
+    // create ul element
+    const ul = document.createElement('ul');
+
+// for loop
+    for (let index = 0; index < data.results.length; index++) {
+        const element = data.results[index];
+        console.log(element)
+
+        // create li element in ul 
+        const li = document.createElement('li');
+
+        // create img element where images will store here
+        const image = document.createElement('img')
+
+        // append images into lists  & lists to ul
+        image.src = element.image
+        li.innerText = element.name
+        li.appendChild(image);
+        ul.appendChild(li)
+    }
+
+    // atlast append ul to main div
+
+    main.appendChild(ul)
+}
