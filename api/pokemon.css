@@ -1,0 +1,57 @@
+/* Reset and base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f0f4f8;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 2rem;
+  }
+  
+  button:hover {
+    background-color: #ffdb4d;
+  }
+  
+  /* Main content container */
+  .main {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* UL styling */
+  ul {
+    display: flex;
+    flex-direction: row; /* horizontal layout */
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 1rem;
+  }
+  
+  /* LI card styling */
+  li {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+  }
+
+  
+  
